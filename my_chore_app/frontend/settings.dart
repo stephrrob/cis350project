@@ -63,7 +63,7 @@ class _SettingsState extends State<Settings> {
     try {
       // Replace with your backend API endpoint for updating user settings
       final response = await http.put(
-        Uri.parse('mongodb+srv://robinss3:2601pbnjMONGO@choremate-prod-cluster.zxtvu9f.mongodb.net/?retryWrites=true&w=majority/update_settings'),
+        Uri.parse('http://127.0.0.1:5000/update_settings'),
         headers: {'Content-Type': 'application/json'},
         body: jsonEncode({'enableReminder': enableReminder}),
       );
