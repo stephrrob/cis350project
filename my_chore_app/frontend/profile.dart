@@ -20,7 +20,7 @@ class _ProfileState extends State<Profile> {
     try {
       // Replace with your backend API endpoint for fetching user profile data
       final response = await http.get(
-        Uri.parse('https://your-backend-api.com/user_profile'),
+        Uri.parse('mongodb+srv://robinss3:2601pbnjMONGO@choremate-prod-cluster.zxtvu9f.mongodb.net/?retryWrites=true&w=majority/user_profile'),
       );
 
       if (response.statusCode == 200) {
@@ -97,7 +97,7 @@ class _ProfileState extends State<Profile> {
     try {
       // Replace with your backend API endpoint for updating user profile
       final response = await http.put(
-        Uri.parse('https://your-backend-api.com/update_profile'),
+        Uri.parse('mongodb+srv://robinss3:2601pbnjMONGO@choremate-prod-cluster.zxtvu9f.mongodb.net/?retryWrites=true&w=majority/update_profile'),
         headers: {'Content-Type': 'application/json'},
         body: jsonEncode({'name': name, 'email': email}),
       );
