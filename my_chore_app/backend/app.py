@@ -7,6 +7,11 @@ app = Flask(__name__)
 app.config['MONGO_URI'] = 'mongodb+srv://robinss3:2601pbnjMONGO@choremate-prod-cluster.zxtvu9f.mongodb.net/?retryWrites=true&w=majority'  # Replace with your MongoDB URI
 mongo = PyMongo(app)
 
+# Define a route handler for the root path
+@app.route('/')
+def index():
+    return 'Welcome to ChoreMate!'
+
 # Route to create a new chore
 @app.route('/chore', methods=['POST'])
 def create_chore():
