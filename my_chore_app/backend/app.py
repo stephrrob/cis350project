@@ -4,7 +4,7 @@ from bson import ObjectId
 import json
 
 app = Flask(__name__)
-app.config['MONGO_URI'] = 'mongodb://localhost:27017/chore_app'  # Replace with your MongoDB URI
+app.config['MONGO_URI'] = 'mongodb+srv://robinss3:2601pbnjMONGO@choremate-prod-cluster.zxtvu9f.mongodb.net/?retryWrites=true&w=majority'  # Replace with your MongoDB URI
 mongo = PyMongo(app)
 
 # Route to create a new chore
