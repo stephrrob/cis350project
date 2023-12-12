@@ -10,7 +10,7 @@ Intro to Software EGR - CIS 350
 ### GVSU School of Computing
 
 # ChoreMate: 
-### a task management app for roomate chores
+### A task management app for roomate chores. 
 
 # Made by:
 ---
