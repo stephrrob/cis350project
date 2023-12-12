@@ -7,15 +7,15 @@ Intro to Software EGR - CIS 350
 </p>
 
 ### Department: 
----
+
 #### GVSU School of Computing
----
+
 ### ChoreMate: 
----
+
 #### A task management app for roomate chores. 
----
+
 ### Made by:
----
+
 #### Stephen Robinson | Student ID: G0151664
 ---
 # 1 Abstract
