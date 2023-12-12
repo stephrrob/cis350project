@@ -22,11 +22,11 @@ Intro to Software EGR - CIS 350
 In today's fast-paced world, managing household chores can be a challenging task, especially for roommates sharing a living space. The "Chore Mate" app is designed to simplify and streamline chore management among roommates. This app aims to help roommates efficiently allocate and track chores, ensuring a harmonious and organized living environment.
 
 "Chore Mate" offers a user-friendly platform for roommates to create chore schedules, assign responsibilities, and receive weekly chore assignments. The app not only simplifies chore management but also encourages accountability and collaboration among roommates. Through automated reminders and notifications, "Chore Mate" ensures that no chore is overlooked, making it a valuable addition to any shared living space.
-![Image Placeholder](image1.png)
+
 
 # 2 Introduction
 "Chore Mate" is a chore management application designed to address the challenges faced by roommates in coordinating household responsibilities. As a student at [Your University], I, Stephen Robinson (Student ID: G01651664), recognized the need for a simple and effective solution to manage chores within shared living arrangements.
-![Image Placeholder](image2.png)
+
 
 
 ## 2.1 Motivation
