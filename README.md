@@ -6,30 +6,30 @@ Intro to Software EGR - CIS 350
   <img src="gv_logo.jpg" width="100" title="gv_logo">
 </p>
 
-#### Department: GVSU School of Computing
+# Department: GVSU School of Computing
 
-#### ChoreMate: a task management app for roomate chores
+# ChoreMate: a task management app for roomate chores
 
-#### Made by:
+# Made by:
 ---
-### Stephen Robinson | Student ID: G0151664
+## Stephen Robinson | Student ID: G0151664
 ---
-## 1 Abstract
+# 1 Abstract
 In today's fast-paced world, managing household chores can be a challenging task, especially for roommates sharing a living space. The "Chore Mate" app is designed to simplify and streamline chore management among roommates. This app aims to help roommates efficiently allocate and track chores, ensuring a harmonious and organized living environment.
 
 "Chore Mate" offers a user-friendly platform for roommates to create chore schedules, assign responsibilities, and receive weekly chore assignments. The app not only simplifies chore management but also encourages accountability and collaboration among roommates. Through automated reminders and notifications, "Chore Mate" ensures that no chore is overlooked, making it a valuable addition to any shared living space.
 ![Image Placeholder](image1.png)
 
-## 2 Introduction
+# 2 Introduction
 "Chore Mate" is a chore management application designed to address the challenges faced by roommates in coordinating household responsibilities. As a student at [Your University], I, Stephen Robinson (Student ID: G01651664), recognized the need for a simple and effective solution to manage chores within shared living arrangements.
 ![Image Placeholder](image2.png)
 
 
-# 2.1 Motivation
+## 2.1 Motivation
 
 With the increasing demand for shared accommodations, effective chore management becomes essential to maintain a clean and organized living space. Traditional methods of handwritten chore lists or verbal agreements often lead to confusion and disagreements among roommates. "Chore Mate" was created to provide roommates with a digital tool that promotes transparency, fairness, and collaboration in chore distribution.
 
-# 2.2 Key Features
+## 2.2 Key Features
 
 - **User Account Creation:** Roommates can set up individual accounts within the app.
 - **Chore Assignment:** Roommates can create and assign specific chores to individuals or groups.
@@ -38,11 +38,11 @@ With the increasing demand for shared accommodations, effective chore management
 - **Accountability Tracking:** "Chore Mate" keeps track of completed and pending chores.
 - **Communication Hub:** Roommates can communicate and provide updates related to chores.
 
-# 2.3 How "Chore Mate" Works
+## 2.3 How "Chore Mate" Works
 
 Upon creating an account, roommates can collaborate within the app to establish chore assignments and schedules. The app generates weekly chore assignments and sends notifications to remind roommates of their responsibilities. Users can mark chores as completed, allowing for easy tracking of progress. "Chore Mate" fosters a sense of shared responsibility and encourages open communication among roommates.
 
-# 2.4 Benefits
+## 2.4 Benefits
 
 "Chore Mate" offers several benefits to users:
 
@@ -51,7 +51,7 @@ Upon creating an account, roommates can collaborate within the app to establish 
 - **Improved Accountability:** Users are more likely to complete chores when tracked digitally.
 - **Time Efficiency:** Spend less time coordinating chores and more time enjoying your living space.
 
-# 2.5 Future Developments
+## 2.5 Future Developments
 
 "Chore Mate" is a dynamic project with potential future enhancements, including:
 
@@ -63,25 +63,25 @@ Upon creating an account, roommates can collaborate within the app to establish 
 We hope "Chore Mate" simplifies chore management for you and your roommates. Feel free to provide feedback and suggestions for further improvements.
 
 
-## 3 Architectural Design
+# 3 Architectural Design
 
-# 3.1 Class Diagram
+## 3.1 Class Diagram
 
 ![Class Diagram Image Placeholder](class_diagram.png)
 
-# 3.2 Sequence Diagram
+## 3.2 Sequence Diagram
 
-#### Sequence Diagram for Add Garage
+### Sequence Diagram for Add Garage
 
 ![Sequence Diagram Image Placeholder](sequence_diagram_add_garage.png)
 
-#### Sequence Diagram for Inquire Space
+### Sequence Diagram for Inquire Space
 
 ![Sequence Diagram Image Placeholder](sequence_diagram_inquire_space.png)
 
-## 4 User Guide/Implementation
+# 4 User Guide/Implementation
 
-### 4.1 Client Side
+## 4.1 Client Side
 
 #### 4.1.1 Starting the Application
 
