@@ -6,13 +6,15 @@ Intro to Software EGR - CIS 350
   <img src="gv_logo.jpg" width="100" title="gv_logo">
 </p>
 
-# Department: GVSU School of Computing
+# Department: 
+### GVSU School of Computing
 
-# ChoreMate: a task management app for roomate chores
+# ChoreMate: 
+### a task management app for roomate chores
 
 # Made by:
 ---
-## Stephen Robinson | Student ID: G0151664
+### Stephen Robinson | Student ID: G0151664
 ---
 # 1 Abstract
 In today's fast-paced world, managing household chores can be a challenging task, especially for roommates sharing a living space. The "Chore Mate" app is designed to simplify and streamline chore management among roommates. This app aims to help roommates efficiently allocate and track chores, ensuring a harmonious and organized living environment.
