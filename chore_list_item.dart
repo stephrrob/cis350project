@@ -1,26 +1,48 @@
 import 'package:flutter/material.dart';
 
-class ChoreListItem extends StatelessWidget {
+class ChoreListItem extends StatefulWidget {
   final String choreName;
   final String assignedTo;
 
   ChoreListItem({required this.choreName, required this.assignedTo});
 
   @override
+  _ChoreListItemState createState() => _ChoreListItemState();
+}
+
+class _ChoreListItemState extends State<ChoreListItem> {
+  bool isCompleted = false; // Checkbox state
+
+  @override
   Widget build(BuildContext context) {
     return Card(
       child: ListTile(
         leading: Checkbox(
-          // Implement checkbox logic here
-          // You can use a stateful widget and manage the checkbox state
+          value: isCompleted,
+          onChanged: (value) {
+            // Update the checkbox state when it's tapped
+            setState(() {
+              isCompleted = value!;
+            });
+          },
         ),
-        title: Text(choreName),
-        subtitle: Text('Assigned to: $assignedTo'),
+        title: Text(widget.choreName),
+        subtitle: Text('Assigned to: ${widget.assignedTo}'),
         onTap: () {
-          // Implement onTap logic for chore details or editing
-          // You can navigate to the chore details screen here
+          // Navigate to the chore details screen when tapped
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => ChoreDetailsScreen(
+                choreName: widget.choreName,
+                assignedTo: widget.assignedTo,
+                isCompleted: isCompleted,
+              ),
+            ),
+          );
         },
       ),
     );
   }
 }
+
