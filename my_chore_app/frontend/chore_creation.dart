@@ -99,7 +99,7 @@ class _ChoreCreationState extends State<ChoreCreation> {
 
   // Function to send a chore creation request to the backend
   Future<http.Response> createChore(Map<String, dynamic> choreData) async {
-    final url = Uri.parse('https://your-backend-api.com/create_chore'); // Replace with your backend URL
+    final url = Uri.parse('mongodb+srv://robinss3:2601pbnjMONGO@choremate-prod-cluster.zxtvu9f.mongodb.net/?retryWrites=true&w=majority/create_chore'); // Replace with your backend URL
     final headers = {'Content-Type': 'application/json'};
 
     final response = await http.post(
