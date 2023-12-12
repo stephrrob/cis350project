@@ -87,7 +87,8 @@ My "Chore Mate" app follows a client-server architecture, which is a common desi
   <br>
   <br>
   Figure 1: Client Server Architecture of ChoreMate App
-</p>
+  </p>
+
 ## 3.1 Class Diagram
 
 ![Class Diagram Image Placeholder](class_diagram.png)
