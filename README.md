@@ -71,7 +71,7 @@ We hope "Chore Mate" simplifies chore management for you and your roommates. Fee
 My "Chore Mate" app follows a client-server architecture, which is a common design pattern for many modern applications. In this architecture, the system is divided into two main components: the client and the server. Here's how the client-server architecture works for my app:
 
 **Client-side**:
-- The client-side represents the part of your application that runs on the user's device, such as a mobile phone or a web browser.
+- The client-side represents the part of the application that runs on the user's device, such as a mobile phone or a web browser.
 - The client-side is the mobile app or web interface that roommates use to interact with the chore management system.
 - Users can create accounts, schedule chores, view notifications, mark chores as completed, and communicate with other roommates through the client-side interface.
 - The client-side is responsible for providing a user-friendly and intuitive experience for roommates.
