@@ -25,7 +25,7 @@ In today's fast-paced world, managing household chores can be a challenging task
 ![Image Placeholder](image2.png)
 
 
-### 2.1 Motivation
+# 2.1 Motivation
 
 With the increasing demand for shared accommodations, effective chore management becomes essential to maintain a clean and organized living space. Traditional methods of handwritten chore lists or verbal agreements often lead to confusion and disagreements among roommates. "Chore Mate" was created to provide roommates with a digital tool that promotes transparency, fairness, and collaboration in chore distribution.
 
