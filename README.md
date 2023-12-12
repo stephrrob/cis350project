@@ -81,6 +81,13 @@ My "Chore Mate" app follows a client-server architecture, which is a common desi
 - In the app, the server-side handles various functions, such as chore assignment, notification generation, user account management, and chore data storage.
 - It communicates with the client-side through APIs (Application Programming Interfaces), which are endpoints that allow the client to send requests and receive responses from the server.
 - The server-side processes requests from multiple clients, ensuring data consistency and reliability.
+
+  <p align="center">
+  <img src="fig1.png" width="500" title="architecture">
+  <br>
+  <br>
+  Figure 1: Client Server Architecture of ChoreMate App
+</p>
 ## 3.1 Class Diagram
 
 ![Class Diagram Image Placeholder](class_diagram.png)
