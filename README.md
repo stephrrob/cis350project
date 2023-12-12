@@ -68,17 +68,17 @@ We hope "Chore Mate" simplifies chore management for you and your roommates. Fee
 
 
 # 3 Architectural Design
-My "Chore Mate" app follows a client-server architecture, which is a common design pattern for many modern applications. In this architecture, the system is divided into two main components: the client and the server. Here's how the client-server architecture works for myapp:
+My "Chore Mate" app follows a client-server architecture, which is a common design pattern for many modern applications. In this architecture, the system is divided into two main components: the client and the server. Here's how the client-server architecture works for my app:
 
 **Client-side**:
 - The client-side represents the part of your application that runs on the user's device, such as a mobile phone or a web browser.
-- In your case, the client-side is the mobile app or web interface that roommates use to interact with the chore management system.
+- The client-side is the mobile app or web interface that roommates use to interact with the chore management system.
 - Users can create accounts, schedule chores, view notifications, mark chores as completed, and communicate with other roommates through the client-side interface.
 - The client-side is responsible for providing a user-friendly and intuitive experience for roommates.
 
 **Server-side**:
-- The server-side represents the backend of your application, which runs on a remote server or cloud infrastructure.
-- In your app, the server-side handles various functions, such as chore assignment, notification generation, user account management, and chore data storage.
+- The server-side represents the backend of the application, which runs on a remote server or cloud infrastructure.
+- In the app, the server-side handles various functions, such as chore assignment, notification generation, user account management, and chore data storage.
 - It communicates with the client-side through APIs (Application Programming Interfaces), which are endpoints that allow the client to send requests and receive responses from the server.
 - The server-side processes requests from multiple clients, ensuring data consistency and reliability.
 ## 3.1 Class Diagram
