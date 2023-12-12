@@ -1,0 +1,24 @@
+name: chore_mate
+description: A Flutter app for managing chores
+version: 1.0.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  http: ^0.13.3   # For making HTTP requests
+  # Add other dependencies as needed
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  assets:
+    - assets/   # Add any asset directories here, like images and fonts
+  fonts:
+    - family: OpenSans
+      fonts:
+        - asset: assets/fonts/OpenSans-Regular.ttf
+        - asset: assets/fonts/OpenSans-Bold.ttf
+  # Add other Flutter configuration settings as needed
