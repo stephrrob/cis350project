@@ -1,18 +1,27 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'dashboard.dart';
+//import 'package:mongo_dart/mongo_dart.dart';
 //import 'profile.dart';
 //import 'settings.dart';
 //import 'chore_list_item.dart';
 import 'chore_creation.dart';
+import 'mongo_helper.dart';
 
-void main() => runApp(const MaterialApp(
-      title: "Chore Mate",
-      home: MyApp(),
-      debugShowCheckedModeBanner: false,
-    ));
+// Initialize the database service with your MongoDB URI
+//final databaseService = DatabaseService('mongodb://your-mongodb-uri');
+
+void main() async {
+  await initializeDatabase(); // Initialize the database connection
+  runApp(const MaterialApp(
+    title: "Chore Mate",
+    home: MyApp(),
+    debugShowCheckedModeBanner: false,
+  ));
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
