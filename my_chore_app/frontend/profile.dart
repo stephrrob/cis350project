@@ -1,11 +1,15 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
 class Profile extends StatefulWidget {
+  const Profile({Key? key}) : super(key: key);
+
   @override
-  _ProfileState createState() => _ProfileState();
+  ProfileState createState() => ProfileState();
 }
 
-class _ProfileState extends State<Profile> {
+class ProfileState extends State<Profile> {
   TextEditingController nameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
 
@@ -26,21 +30,24 @@ class _ProfileState extends State<Profile> {
       if (response.statusCode == 200) {
         final data = jsonDecode(response.body);
         // Populate the text controllers with fetched data
-        nameController.text = data['name'];
-        emailController.text = data['email'];
-      } else {
+        nameController.text = data['name'].toString();
+        emailController.text = data['email'].toString();
+      } else if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
+          const SnackBar(
             content: Text('Failed to fetch user profile data.'),
           ),
         );
       }
     } catch (e) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text('An error occurred. Please check your network connection.'),
-        ),
-      );
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text(
+                'An error occurred. Please check your network connection.'),
+          ),
+        );
+      }
     }
   }
 
@@ -48,7 +55,7 @@ class _ProfileState extends State<Profile> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Profile'),
+        title: const Text('Profile'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -56,11 +63,11 @@ class _ProfileState extends State<Profile> {
           children: <Widget>[
             TextField(
               controller: nameController,
-              decoration: InputDecoration(labelText: 'Name'),
+              decoration: const InputDecoration(labelText: 'Name'),
             ),
             TextField(
               controller: emailController,
-              decoration: InputDecoration(labelText: 'Email'),
+              decoration: const InputDecoration(labelText: 'Email'),
             ),
             ElevatedButton(
               onPressed: () async {
@@ -68,23 +75,27 @@ class _ProfileState extends State<Profile> {
                 final updatedName = nameController.text;
                 final updatedEmail = emailController.text;
 
-                final success = await updateUserProfile(updatedName, updatedEmail);
+                final success =
+                    await updateUserProfile(updatedName, updatedEmail);
 
-                if (success) {
+                if (success && mounted) {
                   ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
+                    const SnackBar(
                       content: Text('Profile updated successfully.'),
                     ),
                   );
+                } else if (!mounted) {
+                  return;
                 } else {
                   ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text('Failed to update profile. Please try again.'),
+                    const SnackBar(
+                      content:
+                          Text('Failed to update profile. Please try again.'),
                     ),
                   );
                 }
               },
-              child: Text('Save Profile'),
+              child: const Text('Save Profile'),
             ),
           ],
         ),
