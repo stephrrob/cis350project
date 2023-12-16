@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http; // Add this import statement
+import 'dart:convert'; // Add this import statement
 
 class Settings extends StatefulWidget {
+  const Settings({Key? key}) : super(key: key);
   @override
-  _SettingsState createState() => _SettingsState();
+  SettingsState createState() => SettingsState();
 }
 
-class _SettingsState extends State<Settings> {
+class SettingsState extends State<Settings> {
   bool enableReminder = true; // Default value for enabling reminders
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Settings'),
+        title: const Text('Settings'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -21,7 +24,7 @@ class _SettingsState extends State<Settings> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                Text('Enable Reminders'),
+                const Text('Enable Reminders'),
                 Switch(
                   value: enableReminder,
                   onChanged: (value) async {
@@ -33,18 +36,21 @@ class _SettingsState extends State<Settings> {
                     // Update user's reminder preference on the backend
                     final success = await updateUserSettings(enableReminder);
 
-                    if (success) {
+                    if (success && mounted) {
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
                           content: enableReminder
-                              ? Text('Reminders enabled.')
-                              : Text('Reminders disabled.'),
+                              ? const Text('Reminders enabled.')
+                              : const Text('Reminders disabled.'),
                         ),
                       );
+                    } else if (!mounted) {
+                      return;
                     } else {
                       ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
-                          content: Text('Failed to update settings. Please try again.'),
+                        const SnackBar(
+                          content: Text(
+                              'Failed to update settings. Please try again.'),
                         ),
                       );
                     }
