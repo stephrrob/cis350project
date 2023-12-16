@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'chore_list_item.dart';
 
 class Dashboard extends StatelessWidget {
+  Dashboard({Key? key}) : super(key: key);
   final List<Map<String, String>> sampleChores = [
     {
       'choreName': 'Clean the kitchen',
@@ -18,7 +19,7 @@ class Dashboard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Chore Manager'),
+        title: const Text('Chore Manager'),
       ),
       body: ListView.builder(
         itemCount: sampleChores.length,
@@ -34,7 +35,7 @@ class Dashboard extends StatelessWidget {
         onPressed: () {
           Navigator.pushNamed(context, '/chore/create');
         },
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
     );
   }
