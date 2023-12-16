@@ -4,13 +4,17 @@ class ChoreListItem extends StatefulWidget {
   final String choreName;
   final String assignedTo;
 
-  ChoreListItem({required this.choreName, required this.assignedTo});
+  const ChoreListItem({
+    required this.choreName,
+    required this.assignedTo,
+    Key? key,
+  }) : super(key: key);
 
   @override
-  _ChoreListItemState createState() => _ChoreListItemState();
+  ChoreListItemState createState() => ChoreListItemState();
 }
 
-class _ChoreListItemState extends State<ChoreListItem> {
+class ChoreListItemState extends State<ChoreListItem> {
   bool isCompleted = false; // Checkbox state
 
   @override
@@ -46,3 +50,31 @@ class _ChoreListItemState extends State<ChoreListItem> {
   }
 }
 
+class ChoreDetailsScreen extends StatelessWidget {
+  final String choreName;
+  final String assignedTo;
+  final bool isCompleted;
+
+  const ChoreDetailsScreen({
+    required this.choreName,
+    required this.assignedTo,
+    required this.isCompleted,
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(choreName),
+      ),
+      body: Column(
+        children: <Widget>[
+          Text('Chore Name: $choreName'),
+          Text('Assigned To: $assignedTo'),
+          Text('Is Completed: $isCompleted'),
+        ],
+      ),
+    );
+  }
+}
