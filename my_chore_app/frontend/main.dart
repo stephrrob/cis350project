@@ -1,11 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+import 'dashboard.dart';
+//import 'profile.dart';
+//import 'settings.dart';
+//import 'chore_list_item.dart';
+import 'chore_creation.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main() => runApp(const MaterialApp(
+      title: "Chore Mate",
+      home: MyApp(),
+      debugShowCheckedModeBanner: false,
+    ));
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -17,11 +27,12 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => BlocProvider(
               create: (context) => ChoreBloc(), // Create the ChoreBloc
-              child: Dashboard(),
+              child: Dashboard(), // Update the name of the widget
             ),
         '/chore/create': (context) => BlocProvider.value(
-              value: BlocProvider.of<ChoreBloc>(context), // Provide the existing ChoreBloc
-              child: ChoreCreation(),
+              value: BlocProvider.of<ChoreBloc>(
+                  context), // Provide the existing ChoreBloc
+              child: const ChoreCreation(),
             ),
         // Add routes for other screens here
       },
@@ -106,6 +117,12 @@ class Chore {
   final String assignedTo;
   final bool completed;
 
+  Chore.fromJson(Map<String, dynamic> json)
+      : id = json['id'],
+        choreName = json['choreName'],
+        assignedTo = json['assignedTo'],
+        completed = json['completed'];
+
   Chore({
     required this.id,
     required this.choreName,
@@ -116,11 +133,37 @@ class Chore {
 
 // Define functions to interact with the backend
 Future<List<Chore>> fetchChoresFromBackend() async {
-  // Implement logic to fetch chores from the backend
-  // Replace with your actual implementation
+  final response = await http.get(Uri.parse('http://127.0.0.1:5000/chores'));
+
+  if (response.statusCode == 200) {
+    // If the server returns a 200 OK response, parse the JSON.
+    var data = jsonDecode(response.body);
+    List<Chore> chores = [];
+    for (Map<String, dynamic> choreMap in data) {
+      chores.add(Chore.fromJson(choreMap));
+    }
+    return chores;
+  } else {
+    // If the server did not return a 200 OK response, throw an exception.
+    throw Exception('Failed to load chores');
+  }
 }
 
 Future<Chore> createChoreInBackend(Map<String, dynamic> choreData) async {
-  // Implement logic to create a chore in the backend
-  // Replace with your actual implementation
+  final response = await http.post(
+    Uri.parse('https://http://127.0.0.1:5000/chores'),
+    headers: <String, String>{
+      'Content-Type': 'application/json; charset=UTF-8',
+    },
+    body: jsonEncode(choreData),
+  );
+
+  if (response.statusCode == 200) {
+    // If the server returns a 200 OK response, parse the JSON.
+    var data = jsonDecode(response.body);
+    return Chore.fromJson(data);
+  } else {
+    // If the server did not return a 200 OK response, throw an exception.
+    throw Exception('Failed to create chore');
+  }
 }
